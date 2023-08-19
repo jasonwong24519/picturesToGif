@@ -24,8 +24,9 @@ def phoToGif(path, new_path):
             d=0
 
         #add a photo to frame
-        frames.append(Image.open(path + os.sep + i))
-        d += 1
+        if 'jpg' in i or 'png' in I:
+            frames.append(Image.open(path + os.sep + i))
+            d += 1
 
     #create gif for the photos still in the frame
     frames[0].save(new_path + os.sep + detect + '.gif', format='GIF',
